@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://bkpvf5g6j1v8m"]
+
+[ext_resource type="Texture2D" uid="uid://cstfvr6krfwjj" path="res://scene/ui/faith-spark-background1.jpg" id="1_s6uko"]
+[ext_resource type="Script" uid="uid://yjnh8654akcs" path="res://scene/ui/main_menu.gd" id="1_vww0c"]
+
+[node name="MainMenu (Control)" type="Control" unique_id=403080098]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vww0c")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1734852239]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_s6uko")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MenuContainer" type="CenterContainer" parent="." unique_id=2100377958]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -38.5
+offset_top = -83.0
+offset_right = 38.5
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MenuContainer" unique_id=1478987508]
+layout_mode = 2
+
+[node name="MenuItems" type="VBoxContainer" parent="MenuContainer/CenterContainer" unique_id=557420248]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="title" type="Label" parent="MenuContainer/CenterContainer/MenuItems" unique_id=1994000832]
+layout_mode = 2
+text = "GAMEJAM 2026"
+
+[node name="StartButton" type="Button" parent="MenuContainer/CenterContainer/MenuItems" unique_id=2104561950]
+layout_mode = 2
+text = "START"
+
+[node name="SettingButton" type="Button" parent="MenuContainer/CenterContainer/MenuItems" unique_id=601173420]
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="ExitButton" type="Button" parent="MenuContainer/CenterContainer/MenuItems" unique_id=1662232289]
+layout_mode = 2
+text = "EXIT"
+
+[connection signal="pressed" from="MenuContainer/CenterContainer/MenuItems/StartButton" to="." method="_on_start_button_pressed"]
